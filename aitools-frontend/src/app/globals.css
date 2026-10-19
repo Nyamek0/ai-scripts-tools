@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Valeurs HSL sans hsl() — utilisées via hsl(var(--x) / alpha) dans Tailwind */
+    --background:        0 0% 98%;       /* #FAFAFA */
+    --foreground:        240 3% 12%;     /* #1D1D1F */
+    --muted:             240 7% 97%;     /* #F5F5F7 */
+    --muted-foreground:  240 2% 54%;     /* #86868B */
+    --card:              0 0% 100%;      /* #FFFFFF */
+    --card-foreground:   240 3% 12%;     /* #1D1D1F */
+    --border:            0 0% 90%;       /* #E5E5E5 */
+    --input:             0 0% 90%;       /* #E5E5E5 */
+    --ring:              210 100% 45%;   /* #0071E3 */
+    --accent:            210 100% 45%;   /* #0071E3 */
+    --accent-hover:      210 95% 47%;   /* #0077ED */
+    --accent-foreground: 0 0% 100%;     /* #FFFFFF */
+    --destructive:       3 100% 59%;    /* #FF3B30 */
+    --success:           135 59% 49%;   /* #34C759 */
+  }
+
+  .dark {
+    --background:        240 3% 11%;    /* #1C1C1E */
+    --foreground:        240 7% 97%;    /* #F5F5F7 */
+    --muted:             240 2% 18%;    /* #2C2C2E */
+    --muted-foreground:  240 2% 61%;    /* #98989D */
+    --card:              240 2% 18%;    /* #2C2C2E */
+    --card-foreground:   240 7% 97%;    /* #F5F5F7 */
+    --border:            240 2% 23%;    /* #3A3A3C */
+    --input:             240 2% 23%;    /* #3A3A3C */
+    --ring:              211 100% 52%;  /* #0A84FF */
+    --accent:            211 100% 52%;  /* #0A84FF */
+    --accent-hover:      211 100% 50%; /* #0091FF */
+    --accent-foreground: 0 0% 100%;    /* #FFFFFF */
+    --destructive:       2 100% 61%;   /* #FF453A */
+    --success:           142 66% 50%;  /* #30D158 */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv-ai-tools/
+.env
+
+# Claude / AI tools
+.claude/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Project specific
+outputs/
+uploads/
+mnt/
+node_modules/
+.next/
+dist/
+build/
+aitools-frontend/.env.local

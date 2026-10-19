@@ -1,0 +1,57 @@
+# ─── Core Framework ───────────────────────────────────────────────────────────
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+python-multipart==0.0.9        # upload de fichiers
+pydantic==2.7.1
+pydantic-settings==2.3.0
+
+# ─── Queue / Async ────────────────────────────────────────────────────────────
+celery==5.4.0
+redis==5.0.6
+flower==2.0.1                  # dashboard monitoring Celery (optionnel)
+
+# ─── Database ─────────────────────────────────────────────────────────────────
+sqlalchemy==2.0.30
+asyncpg==0.29.0                # driver PostgreSQL async
+alembic==1.13.1                # migrations
+
+# ─── Auth ─────────────────────────────────────────────────────────────────────
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==3.2.2                  # passlib 1.7.4 incompatible avec bcrypt>=4 (strict 72-byte check)
+
+# ─── Module 01 — Suppression de fond ─────────────────────────────────────────
+rembg==2.0.56
+onnxruntime==1.18.0            # CPU — remplacer par onnxruntime-gpu si GPU dispo
+Pillow==10.3.0
+
+# ─── Module 02 — Transcription audio ─────────────────────────────────────────
+openai-whisper==20231117
+ffmpeg-python==0.2.0           # requiert ffmpeg installé sur le système
+
+# ─── Module 03 — OCR ──────────────────────────────────────────────────────────
+easyocr==1.7.1
+
+# ─── Module 04 — Fusion PDF ───────────────────────────────────────────────────
+pypdf==4.2.0
+
+# ─── Module 05 — Synthèse vocale (TTS) ───────────────────────────────────────
+edge-tts==7.2.8                # Microsoft Edge TTS — requiert connexion internet
+
+# ─── Module 06 — Compression vidéo ───────────────────────────────────────────
+# ffmpeg-python déjà présent (module 02 Transcription)
+# Requiert également: ffmpeg installé sur le système (apt/brew install ffmpeg)
+
+# ─── Module 07 — Résumé de texte ──────────────────────────────────────────────
+sumy==0.11.0
+nltk==3.8.1
+
+# ─── Module 08 — Conversion d'image ──────────────────────────────────────────
+# Pillow déjà présent (module 01 Suppression de fond)
+
+# ─── Utils ────────────────────────────────────────────────────────────────────
+numpy<2.0.0                    # requis pour compatibilité onnxruntime/rembg
+python-dotenv==1.0.1
+httpx==0.27.0                  # client HTTP async pour appels externes
+aiofiles==23.2.1               # lecture/écriture fichiers async
+loguru==0.7.2                  # logs améliorés (optionnel)
